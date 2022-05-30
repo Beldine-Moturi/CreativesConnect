@@ -1,3 +1,4 @@
+# CreativesConnect[Licence: MIT](https://github.com/Beldine-Moturi/CreativesConnect/blob/master/LICENSE)
 # ![CreativesConnect](images/icon1.png)
 # CreativesConnect
 <table>

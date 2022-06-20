@@ -1,9 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """Defines the Base Model class that all other
 classes in this project will inherit from"""
 from datetime import datetime
-# import models
+import models
 import uuid
+from app.app import db
 
 
 time = "%Y-%m-%dT%H:%M:%S.%f"
@@ -12,6 +13,10 @@ time = "%Y-%m-%dT%H:%M:%S.%f"
 class BaseModel:
     """The Base class for all objects of this project
     All other classes will inherit from this class"""
+
+    id = db.Column(db.String(60), nullable=False, primary_key=True)
+    created_at = db.Column(db.Date, nullable=False, default=datetime.utcnow)
+    updated_at = db.Column(db.Date, nullable=False, default=datetime.utcnow)
 
     def __init__(self, *args, **kwargs):
         """Initializes instances of this class"""
@@ -68,7 +73,9 @@ class BaseModel:
 
         return dictionary
 
-    """def delete(self):
-        Deletes the current instance from the storage
+    def delete(self):
+        """Deletes the current instance from the storage"""
 
-        models.storage.delete(self)"""
+        models.storage.delete(self)
+
+    

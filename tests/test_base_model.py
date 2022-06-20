@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """Contains test cases for the BaseModel class"""
 from datetime import datetime
 from models.base_model import BaseModel

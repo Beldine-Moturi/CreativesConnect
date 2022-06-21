@@ -30,6 +30,16 @@
 |  | setup_mysql_test.sql | sets up the mysql database for testing |
 | To be updated |
 
+## To be Implemented...
+1. Define classes for all other objects in this project
+2. create a console: command interpreter for  manipulating(create, update, delete, etc) objects in this project
+3. API: Expose data in the database via an API
+4. static web: create the user web interface for the app
+5. dynamic we: make the app dynamic with Javascript
+6. Populate app with data
+7. Deploy app
+8. DEMO: add demo to README file
+
 ## Bugs
 No known bugs at this time
 

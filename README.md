@@ -44,11 +44,25 @@
 No known bugs at this time
 
 ## Technologies used
-- Languages: python, HTML, CSS, Javascript, sql, Bash
-- Frameworks: Flask, flask_sqlalchemy, Flask-CORS, JQuery, RESTful API, Bootstrap
-- Operating system: This project is interpreted/tested on Ubuntu 14.04 LTS using python3
-- style: Pycodestyle
-- Version control: Git
+**Front-End**:
+
+| Tool/Library                                                                       | Version |
+| ---------------------------------------------------------------------------------- | ------- |
+| [HTML5.0](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)                                      | 3.5.3  |
+| [CSS](https://developer.mozilla.org/en-US/docs/Web CSS)                                                      | 16.8.6 |
+| [Bootstrap](https://getbootstrap.com/)                                            | 5.1  |
+| [Javascript](https://frontarm.com/navi/en/)                                              | 3.0.0  |
+
+
+**Back-End**:
+
+| Tool/Library                           | Version |
+| -------------------------------------- | ------- |
+| [Python3](https://www.python.org/)     | 3.5.8    |
+| [Flask](https://flask.palletsprojects.com/en/2.1.x/) | 2.1.3     |
+| [Flask-SQLAlchmey](https://flask-sqlalchemy.palletsprojects.com/en/2.x/)  | 3.4    |
+| [MySQL](https://www.mysql.com/)  | 5.7    |
+
 
 ## Authors
 - Beldine Moturi | [Linkedin](https://www.linkedin.com/in/beldine-moturi-00811615a/)

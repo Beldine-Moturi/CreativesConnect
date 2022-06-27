@@ -23,7 +23,7 @@ port = 5000
 host = '0.0.0.0'
 
 
-@app.route('hello')
+@app.route('/hello')
 def hello():
     """Testing..."""
     return "<p>Hello, World!</p>"

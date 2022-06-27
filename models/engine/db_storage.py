@@ -25,6 +25,7 @@ class DBStorage():
                 all_objs[f"{obj.__class__.__name__}.{obj.id}"] = obj
         else:
             for c in classes:
+                c = eval(c)
                 objs = c.query.all()
                 for obj in objs:
                     all_objs[f"{obj.__class__.__name__}.{obj.id}"] = obj

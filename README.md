@@ -12,8 +12,65 @@
 ## Demo
 
 ## Features
+**1. The Command interpreter**
+Like a shell in Unix-like systems but limited to a specific use case;  in this case, that is managing the objects of this project i.e:
+- Create a new object (ex: a new User or a new Location)
+- Retrieve an object from a file, a database etc…
+- Do operations on objects (count, compute stats, etc…)
+- Update attributes of an object
+- Destroy an object
 
-## Usage
+### Usage
+clone this repository
+```
+git clone git@github.com:Beldine-Moturi/CreativesConnect.git
+cd AirBnB_clone
+```
+
+#### Starting the Command interpreter
+In interactive mode:
+**Example**
+```
+beldine@ubuntu:~$ ./console.py
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  create  help  quit
+
+Undocumented commands:
+======================
+all  destroy  show  update
+
+(hbnb) help quit
+Exit the program
+(hbnb) quit
+beldine@ubuntu:~$
+```
+
+In non-interactive mode:
+**Example**
+```
+beldine@ubuntu:~$ echo "help" | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb)
+beldine@ubuntu:~$
+beldine@ubuntu:~$ cat test_help
+help
+beldine@ubuntu:~$
+beldine@ubuntu:~$ cat test_help | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb)
+beldine@ubuntu:~$
+```
 
 ## File Descriptions
 | Folder | File | Description |

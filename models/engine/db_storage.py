@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Defines the class DBStorage"""
-from app.app import app, db
+from web.app import app, db
 from os import getenv
 
 classes = []

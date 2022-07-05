@@ -4,7 +4,7 @@ classes in this project will inherit from"""
 from datetime import datetime
 import models
 import uuid
-from app.app import db
+from web.app import db
 
 
 time = "%Y-%m-%dT%H:%M:%S.%f"

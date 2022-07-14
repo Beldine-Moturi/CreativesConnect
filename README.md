@@ -30,7 +30,6 @@
 | To be updated |
 
 ## To be Implemented...
-1. Define classes for all other objects in this project
 2. API: Expose data in the database via an API
 3. static web: create the user web interface for the app
 4. dynamic we: make the app dynamic with Javascript

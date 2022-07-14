@@ -22,19 +22,19 @@ class Project(db.Model):
     """Creates the Projects Table"""
 
     id = db.Column(db.String(60), nullable=False, unique=True, primary_key=True)
-    created_at = db.Column(db.Date, nullable=False, default=datetime.utcnow)
+    created_at = db.Column(db.DateTime, default=datetime.now())
     title = db.Column(db.String(60), nullable=False)
     description =db.Column(db.String(256))
     cover_photo_url =db.Column(db.String(80))
     organization = db.Column(db.String(80))
-    location = db.Column(db.String(60), db.ForeignKey('location.id'))
-    skills = db.relationship(
+    location_id = db.Column(db.String(60), db.ForeignKey('location.id'))
+    p_skills = db.relationship(
         'Skills',
         secondary=project_skills,
         lazy='joined',
         backref=db.backref('projects', lazy=True)
     )
-    industries = db.relationship(
+    p_industries = db.relationship(
         'Industry',
         secondary=project_industry,
         lazy='joined',

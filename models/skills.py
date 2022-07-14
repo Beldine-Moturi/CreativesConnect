@@ -9,8 +9,8 @@ class Skills(db.Model):
     """Created the table that stores a list of skills"""
 
     id = db.Column(db.String(60), nullable=False, unique=True, primary_key=True)
-    created_at = db.Column(db.Date, default=datetime.utcnow)
-    updated_at = db.Column(db.Date, default=datetime.utcnow)
+    created_at = db.Column(db.DateTime, default=datetime.now())
+    updated_at = db.Column(db.DateTime, default=datetime.now())
     name = db.Column(db.String(60), nullable=False)
 
     def to_dict(self):
@@ -29,8 +29,8 @@ class Industry(db.Model):
     """Creates the table that stores a list of Industry categories"""
 
     id = db.Column(db.String(60), nullable=False, unique=True, primary_key=True)
-    created_at = db.Column(db.Date, default=datetime.utcnow)
-    updated_at = db.Column(db.Date, default=datetime.utcnow)
+    created_at = db.Column(db.DateTime, default=datetime.now())
+    updated_at = db.Column(db.DateTime, default=datetime.now())
     name = db.Column(db.String(60), nullable=False)
 
     def to_dict(self):

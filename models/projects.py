@@ -17,8 +17,8 @@ class Project(db.Model):
 
     id = db.Column(db.String(60), nullable=False, unique=True, primary_key=True)
     created_at = db.Column(db.DateTime, default=datetime.now())
-    title = db.Column(db.String(60), nullable=False)
-    description =db.Column(db.String(256))
+    title = db.Column(db.String(60), nullable=False, unique=True)
+    description =db.Column(db.Text)
     cover_photo_url =db.Column(db.String(80))
     organization = db.Column(db.String(80))
     location_id = db.Column(db.String(60), db.ForeignKey('location.id'))

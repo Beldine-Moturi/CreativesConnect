@@ -8,8 +8,7 @@ class Location(db.Model):
     """Creates the Location table"""
 
     id = db.Column(db.String(60), nullable=False, primary_key=True)
-    country = db.Column(db.String(60), nullable=False, unique=True)
-    city = db.Column(db.String(60), nullable=False, unique=True)
+    name = db.Column(db.String(256), unique=True)
     creatives = db.relationship('Creative', lazy=True, backref=db.backref('location', lazy='joined'))
     projects = db.relationship('Project', lazy=True, backref=db.backref('location', lazy='joined'))
 
@@ -18,8 +17,7 @@ class Location(db.Model):
 
         return {
             "id": self.id,
-            "city": self.city,
-            "country": self.country,
+            "name": self.name,
             "creatives": [c.id for c in self.creatives],
             "projects": [p.id for p in self.projects]
         }

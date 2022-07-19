@@ -11,7 +11,7 @@ class Skills(db.Model):
     id = db.Column(db.String(60), nullable=False, unique=True, primary_key=True)
     created_at = db.Column(db.DateTime, default=datetime.now())
     updated_at = db.Column(db.DateTime, default=datetime.now())
-    name = db.Column(db.String(60), nullable=False)
+    name = db.Column(db.String(60), nullable=False, unique=True)
 
     def to_dict(self):
         """Returns a dictionary of the objects' attributes"""
@@ -24,22 +24,3 @@ class Skills(db.Model):
     def __repr__(self) -> str:
         return f"Skill: {self.name}"
 
-
-class Industry(db.Model):
-    """Creates the table that stores a list of Industry categories"""
-
-    id = db.Column(db.String(60), nullable=False, unique=True, primary_key=True)
-    created_at = db.Column(db.DateTime, default=datetime.now())
-    updated_at = db.Column(db.DateTime, default=datetime.now())
-    name = db.Column(db.String(60), nullable=False)
-
-    def to_dict(self):
-        """Returns a dictionary of the object's attributes"""
-
-        return {
-            "name": self.name,
-            "id": self.id
-        }
-
-    def __repr__(self) -> str:
-        return f"Industry: {self.name}"

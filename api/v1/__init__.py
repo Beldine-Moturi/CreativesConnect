@@ -11,7 +11,7 @@ MYSQL_DB = 'CreativesConnect' #getenv('MYSQL_DB')
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://{}:{}@{}/{}'.format(
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://{}:{}@{}/{}?charset=utf8mb4'.format(
     MYSQL_USER, MYSQL_PWD, MYSQL_HOST, MYSQL_DB
 )
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

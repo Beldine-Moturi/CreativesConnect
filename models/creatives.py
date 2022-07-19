@@ -11,11 +11,6 @@ creative_skills = db.Table(
     db.Column('skill_id', db.String(60), db.ForeignKey('skills.id'), primary_key=True)
     )
 
-creative_industry = db.Table(
-    'creative_industry',
-    db.Column('creative_id', db.String(60), db.ForeignKey('creative.id'), primary_key=True),
-    db.Column('industry_id', db.String(60), db.ForeignKey('industry.id'), primary_key=True)
-)
 
 class Creative(db.Model):
     """Defines a Creative (Table)"""
@@ -28,7 +23,8 @@ class Creative(db.Model):
     first_name = db.Column(db.String(60))
     last_name = db.Column(db.String(60))
     profile_img_url = db.Column(db.String(256))
-    about = db.Column(db.String(256))
+    cover_photo_url = db.Column(db.String(256))
+    about = db.Column(db.String(256), nullable=True)
     location_id = db.Column(db.String(60), db.ForeignKey('location.id'))
     photos = db.relationship('Portfolio', lazy=True, backref=db.backref('creative', lazy='joined'))
     c_skills = db.relationship(
@@ -37,12 +33,6 @@ class Creative(db.Model):
         lazy='joined',
         backref=db.backref('creatives', lazy=True)
         )
-    c_industries = db.relationship(
-        'Industry',
-        secondary=creative_industry,
-        lazy='joined',
-        backref=db.backref('creatives', lazy=True)
-    )
 
     def to_dict(self):
         """Returns a dictionary of the objects' attributes"""
@@ -53,10 +43,7 @@ class Creative(db.Model):
             my_dict.pop("passsword")
         
         if "location" in my_dict:
-            location = {
-                "city": my_dict.location.city,
-                "country": my_dict.location.country
-                }
+            location = my_dict.location.name
             my_dict["location"] = location
 
         if "portfolio" in my_dict:
@@ -66,10 +53,6 @@ class Creative(db.Model):
         if "skills" in my_dict:
             skills = [skill.name for skill in my_dict.skills]
             my_dict["skills"] = skills
-
-        if "industries" in my_dict:
-            industries = [industry.name for industry in my_dict.insdustries]
-            my_dict["industries"] = industries
 
         my_dict.pop('_sa_instance_state')
 
@@ -86,7 +69,7 @@ class Portfolio(db.Model):
     id = db.Column(db.String(60), nullable=False, primary_key=True)
     uploaded_at = db.Column(db.DateTime, default=datetime.now())
     image_url = db.Column(db.String(256), nullable=False)
-    name = db.Column(db.String(60))
+    description = db.Column(db.Text)
     creative_id = db.Column(db.String(60), db.ForeignKey('creative.id'), nullable=False)
 
     def to_dict(self):

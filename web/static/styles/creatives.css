@@ -1,0 +1,49 @@
+/*
+==============
+Creatives and Projects
+==============
+*/
+
+.c_col {
+    height: 380px;
+    width: 350px;
+    border: 1px solid rgb(65, 193, 186, .2);
+    border-radius: 5px;
+    background-color: rgb(54, 91, 109, .1);
+}
+.creatives li, .projects li {
+    display: inline-block;
+    margin: 0px;
+}
+.profile_image,
+.name {
+    display: inline-block;
+}
+.profile_image {
+    height: 65px;
+    width: 65px;
+}
+.cover_image {
+    display: block;
+    height: 230px;
+    width: 100%;
+}
+/*.details {
+    display: inline-block;
+}*/
+.details button {
+    font-size: 14px;
+    margin-left: 130px;
+    height: 35px;
+    background-color: #41c1ba;
+    border-radius: 5px;
+    border: 1px solid #41c1ba;
+    color: white;
+}
+.details button:active {
+    background-color: rgb(65, 193, 186, .1);
+}
+.p_btn {
+    width: 75px;
+    margin-top: 20px;
+}

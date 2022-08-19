@@ -199,7 +199,8 @@ The search bar
 Footer
 =================
 */
-footer {
+footer,
+.footer{
     background-color: #365b6d;
 }
 
@@ -209,18 +210,27 @@ footer {
 .small-font {
     font-size: 14px;
 }
-footer a {
+footer a,
+.footer a {
     text-decoration: none;
     color: white;
 }
 footer .login_button,
-footer .sign_up {
+footer .sign_up,
+.footer .login_button,
+.footer .sign_up {
     float: none;
 }
 footer p,
-footer h3 {
+footer h3,
+.footer p,
+.footer h3 {
     color: white;
 }
-footer img {
+footer img,
+.footer img{
     margin-left: 125px;
+}
+.footer {
+    height: 514px;
 }

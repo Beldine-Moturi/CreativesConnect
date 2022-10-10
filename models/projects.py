@@ -34,13 +34,15 @@ class Project(db.Model):
 
         my_dict = self.__dict__.copy()
 
-        if "location" in my_dict:
-            location = my_dict.location.name
+        if "location_id" in my_dict:
+            location = self.location
             my_dict["location"] = location
+            my_dict.pop('location_id')
 
-        if "skills" in my_dict:
-            skills = [skill.name for skill in my_dict.skills]
+        if "p_skills" in my_dict:
+            skills = [skill.name for skill in my_dict['p_skills']]
             my_dict["skills"] = skills
+            my_dict.pop('p_skills')
 
         my_dict.pop('_sa_instance_state')
 

@@ -3,6 +3,7 @@
 
 from api.v1 import db
 from datetime import datetime
+from models.locations import *
 
 
 creative_skills = db.Table(
@@ -38,21 +39,33 @@ class Creative(db.Model):
         """Returns a dictionary of the objects' attributes"""
 
         my_dict = self.__dict__.copy()
+        #print(my_dict.keys())
 
         if "password" in my_dict:
-            my_dict.pop("passsword")
+            my_dict.pop("password")
         
-        if "location" in my_dict:
-            location = my_dict.location.name
-            my_dict["location"] = location
+        if "location_id" in my_dict:
+            # return location name? # remove location_id
+            #location = my_dict['location_id']
+            #loc = db.session.execute(db.select(Location.name).filter_by(id=location)).one()
+            # print(type(loc))
+            # print(loc)
+            loc = self.location
+            my_dict["location"] = loc
+            my_dict.pop('location_id')
+            
 
-        if "portfolio" in my_dict:
-            portf = {portf.name: portf.image_url for portf in my_dict.portfolio}
-            my_dict["portfolio"] = portf
+        # fetch portfolio from portfolio table
+        #if "photos" in my_dict:
+        portf = [portf.image_url for portf in self.photos]
+        my_dict["portfolio"] = portf
 
-        if "skills" in my_dict:
-            skills = [skill.name for skill in my_dict.skills]
+
+        # return skills name instead
+        if "c_skills" in my_dict:
+            skills = [skill.name for skill in my_dict['c_skills']]
             my_dict["skills"] = skills
+            my_dict.pop('c_skills')
 
         my_dict.pop('_sa_instance_state')
 
@@ -77,8 +90,9 @@ class Portfolio(db.Model):
 
         my_dict = self.__dict__.copy()
 
-        if "creative" in my_dict:
-            my_dict["creative"] = my_dict.creative.id
+        if "creative_id" in my_dict:
+            my_dict["creative"] = self.creative.id
+            my_dict.pop("creative_id")
 
         my_dict.pop('_sa_instance_state')
 

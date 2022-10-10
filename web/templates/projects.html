@@ -41,14 +41,12 @@
                     <ul class="dropdown-menu">
                         <!-- Fetch locations in storage -->
                         <li>
-                            <label class="checkbox_label">Two
+                            {% for location in locations %}
+                            <label class="checkbox_label">{{ location.name }}
                                 <input type="checkbox">
                                 <span class="checkmark"></span>
                             </label>
-                            <label class="checkbox_label">Two
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
+                            {% endfor %}
                         </li>
                     </ul>
                 </div>
@@ -59,14 +57,12 @@
                     <ul class="dropdown-menu">
                         <!-- Fetch skills in storage -->
                         <li>
-                            <label class="checkbox_label">Two
+                            {% for skill in skills %}
+                            <label class="checkbox_label">{{ skill.name }}
                                 <input type="checkbox">
                                 <span class="checkmark"></span>
                             </label>
-                            <label class="checkbox_label">Two
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
+                            {% endfor %}
                         </li>
                     </ul>
                 </div>

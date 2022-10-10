@@ -25,4 +25,4 @@ class Location(db.Model):
     def __repr__(self):
         """returns a string representation of the object"""
 
-        return f"Location: {self.city}, {self.country}"
+        return f"Location: {self.name}"

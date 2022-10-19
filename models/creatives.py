@@ -2,6 +2,7 @@
 """Defines the creatives class (table)"""
 
 from api.v1 import db
+#from models import db
 from datetime import datetime
 from models.locations import *
 

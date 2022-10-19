@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+"""Launches the web application"""
 from flask import Flask, render_template
 from flask_nav import Nav
 from flask_nav.elements import Navbar, View
